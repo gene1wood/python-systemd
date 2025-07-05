@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt -y update
-          sudo apt -y install gcc libsystemd-dev
+          sudo apt -y install gcc libsystemd-dev python3-setuptools
           source ~/${{ matrix.python }}/bin/activate
           python3 -m pip install pytest sphinx
       - name: Build (Python ${{ matrix.python }})
