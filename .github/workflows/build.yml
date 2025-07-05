@@ -38,13 +38,15 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           architecture: x64
-      - name: Create virtualenv
-        run: |
-          python3 -m venv ~/${{ matrix.python }}
       - name: Install dependencies
         run: |
           sudo apt -y update
           sudo apt -y install gcc libsystemd-dev python3-setuptools
+      - name: Create virtualenv
+        run: |
+          python3 -m venv ~/${{ matrix.python }}
+      - name: Install python dependencies
+        run: |
           source ~/${{ matrix.python }}/bin/activate
           python3 -m pip install pytest sphinx
       - name: Build (Python ${{ matrix.python }})
