@@ -50,9 +50,11 @@ jobs:
       - name: Build (Python ${{ matrix.python }})
         run: |
           set -x
+          source ~/${{ matrix.python }}/bin/activate
           make -j
           make doc SPHINXOPTS="-W -v"
 
       - name: Test (Python ${{ matrix.python }})
         run: |
+          source ~/${{ matrix.python }}/bin/activate
           make check
