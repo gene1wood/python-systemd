@@ -57,7 +57,8 @@ jobs:
               python3 -m ensurepip
               ;;
           centos)
-              dnf -y install --repo appstream "${DEPS_COMMON[@]}" systemd-devel python3-devel python3-pip python3-setuptools
+              dnf -y install --repo baseos pkg-config python3 systemd python3-setuptools
+              dnf -y install --repo appstream gcc git python3 systemd systemd-devel python3-devel python3-pip
               python3 -m venv ~/venv
               source ~/venv/bin/activate
               ;;
