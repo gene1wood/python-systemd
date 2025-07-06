@@ -48,7 +48,7 @@ jobs:
       - name: Install python dependencies
         run: |
           source ~/${{ matrix.python }}/bin/activate
-          python3 -m pip install pytest sphinx
+          python3 -m pip install pytest sphinx setuptools
       - name: Build (Python ${{ matrix.python }})
         run: |
           set -x

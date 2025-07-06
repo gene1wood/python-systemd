@@ -57,7 +57,7 @@ jobs:
               python3 -m ensurepip
               ;;
           centos|fedora)
-              dnf -y install "${DEPS_COMMON[@]}" systemd-devel python3-devel python3-pip python3-setuptools
+              dnf -y install --repo baseos "${DEPS_COMMON[@]}" systemd-devel python3-devel python3-pip python3-setuptools
               python3 -m venv ~/venv
               source ~/venv/bin/activate
               ;;
